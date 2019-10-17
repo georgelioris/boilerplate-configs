@@ -7,7 +7,7 @@ if tmux has-session -t $SESSION 2> /dev/null; then
   exit
 fi
 
-TERM=screen-256color tmux -f $HOME/.config/tmux/.tmux.conf new-session -d -s $SESSION -n vim
+tmux -f $HOME/.config/tmux/.tmux.conf new-session -d -s $SESSION -n vim
 
 # 1. Main Window
 tmux send-keys -t $SESSION:vim "vim src/" Enter
